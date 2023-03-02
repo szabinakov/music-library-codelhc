@@ -6,7 +6,8 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-res.status(200)
+res.status(200);
+res.send("hello");
 })
 
 app.use('/artists',artistRouter)
