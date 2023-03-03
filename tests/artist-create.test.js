@@ -11,6 +11,7 @@ const { expect } = require('chai');
            name: 'Tame Impala',
            genre: 'rock',
          });
+         console.log({body})
 
          expect(status).to.equal(201);
          expect(body.name).to.equal('Tame Impala');
