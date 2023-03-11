@@ -13,7 +13,7 @@ async function createAlbum(req, res) {
     }
 }
 
-const retrieveAlbums = async (req, res) => {
+async function retrieveAlbums(req, res) {
     try {
       const { rows } = await db.query('SELECT * FROM Albums');
       res.status(200).json(rows);
@@ -22,7 +22,7 @@ const retrieveAlbums = async (req, res) => {
     }
   };
   
-  const getAlbumById = async (req, res) => {
+  async function getAlbumById(req, res){
     try {
       const { id } = req.params;
       const {
@@ -38,7 +38,7 @@ const retrieveAlbums = async (req, res) => {
     }
   };
 
-  const updateAlbum = async (req, res) => {
+  async function updateAlbum(req, res) {
     const { id } = req.params;
     const { name, year } = req.body;
   
@@ -69,7 +69,7 @@ const retrieveAlbums = async (req, res) => {
     }
   };
   
-  const deleteAlbum = async (req, res) => {
+  async function deleteAlbum(req, res) {
     try {
       const { id } = req.params;
       const { rows } = await db.query(
